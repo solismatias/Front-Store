@@ -1,10 +1,11 @@
 //ABSTRACTS
 @import "abstracts/variables";
+@import "abstracts/mixins";
 // BASE
 @import "base/typography";
 // LAYOUT
 @import "layout/navbar";
 
 body {
-  background-color: beige;
+  font-family: "Raleway";
 }

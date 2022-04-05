@@ -4,7 +4,7 @@
   align-items: center;
   justify-items: center;
   background-color: white;
-  height: 15vh;
+  height: 10vh;
   &__list {
     display: flex;
     align-self: center;
@@ -17,24 +17,28 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-    font-family: "Raleway";
     &:hover {
       cursor: pointer;
       font-weight: 600;
       color: $green;
+      stroke: $green;
+      border-bottom: 2px solid $green;
+      & .down {
+        stroke: $green;
+      }
+      & .cart {
+        fill: $green;
+      }
     }
   }
   &__logo {
     width: 40px;
-  }
-  &__cart {
-    width: 20px;
-  }
-  &__down {
-    width: 10px;
-    margin: 0 5px;
+    &:hover {
+      @include shake-animation;
+    }
   }
   &__currency {
     font-weight: 500;
+    margin-right: 5px;
   }
 }
