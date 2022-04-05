@@ -1,2 +1,10 @@
+//ABSTRACTS
+@import "abstracts/variables";
+// BASE
+@import "base/typography";
 // LAYOUT
 @import "layout/navbar";
+
+body {
+  background-color: beige;
+}
