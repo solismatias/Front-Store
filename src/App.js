@@ -1,4 +1,3 @@
-import './App.css';
 import "./sass/main.scss"
 import { Navbar } from './components/Navbar';
 
