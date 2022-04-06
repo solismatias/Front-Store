@@ -5,6 +5,7 @@ export class Card extends Component {
   render() {
     return (
       <div className='card'>
+        {/* <span className='card__stock'>OUT OF STOCK</span> */}
         <img className='card__image' alt="product" src={producto} />
         <span className='card__cart'>
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 25 19" fill="none" stroke="none">
