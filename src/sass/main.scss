@@ -3,9 +3,17 @@
 @import "abstracts/mixins";
 // BASE
 @import "base/typography";
+//COMPONENTS
+@import "components/card";
 // LAYOUT
 @import "layout/navbar";
+@import "layout/category";
 
 body {
   font-family: "Raleway";
+  padding: 0 5vw;
+  max-width: 2000px;
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
 }

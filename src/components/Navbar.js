@@ -5,7 +5,7 @@ export class Navbar extends Component {
   render() {
     return (
       <nav className='navbar'>
-        <ul className='navbar__list'>
+        <ul className='navbar__list navbar__list--left'>
           <li className='navbar__item'>WOMEN</li>
           <li className='navbar__item'>MEN</li>
           <li className='navbar__item'>KIDS</li>
@@ -27,7 +27,7 @@ export class Navbar extends Component {
             </clipPath>
           </defs>
         </svg>
-        <ul className='navbar__list'>
+        <ul className='navbar__list navbar__list--right'>
           <li className='navbar__item'>
             <span className='navbar__currency'>$</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 8 4" fill="none">
