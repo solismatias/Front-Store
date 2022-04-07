@@ -5,6 +5,18 @@
   justify-items: center;
   background-color: white;
   height: 10vh;
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: -webkit-fill-available;
+    padding: 0 5vw;
+    max-width: 2000px;
+    @media (max-width: 768px) {
+      padding: 0 5px;
+    }
+  }
   &__list {
     display: flex;
     // align-self: center;
@@ -34,6 +46,9 @@
       }
       & .cart {
         fill: $green;
+        color: $black;
+        font-weight: 400;
+        cursor: default;
       }
     }
   }
@@ -46,5 +61,8 @@
   &__currency {
     font-weight: bold;
     margin-right: 5px;
+  }
+  &__cart {
+    position: relative;
   }
 }
