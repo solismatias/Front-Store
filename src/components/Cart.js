@@ -9,8 +9,6 @@ export class Cart extends Component {
           <p><b>My Bag.</b> 2 items</p>
           <div className='cart__itemcontainer'>
             <CartItem />
-            <CartItem />
-            <CartItem />
           </div>
           <section className='cart__checkout'>
             <b>Total</b>

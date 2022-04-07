@@ -1,0 +1,20 @@
+.currency {
+  display: grid;
+  position: absolute;
+  top: 10vh;
+  height: 170px;
+  width: 100px;
+  list-style: none;
+  padding: 0;
+  background-color: $white;
+  @include shadow;
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: $light-grey;
+      cursor: pointer;
+    }
+  }
+}
