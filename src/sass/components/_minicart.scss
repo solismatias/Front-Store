@@ -1,4 +1,4 @@
-.cart {
+.minicart {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,8 +14,7 @@
   z-index: 2;
   padding: 1rem;
   background-color: $white;
-  // display: none;
-  &__overlay {
+  &__background {
     position: fixed;
     top: 10vh;
     right: 0;
@@ -26,7 +25,7 @@
   }
   &__itemcontainer {
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &__checkout {
     display: grid;
