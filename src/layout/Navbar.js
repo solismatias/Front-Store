@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MiniCart from './MiniCart'
+import MiniCart from '../components/MiniCart'
 // import Currency from './Currency'
 
 

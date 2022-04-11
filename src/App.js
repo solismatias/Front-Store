@@ -1,8 +1,8 @@
 import "./sass/main.scss"
-import Navbar from './components/Navbar';
-import Cart from "./components/Cart";
-// import Category from "./components/Category";
-// import Product from "./components/Product";
+import Navbar from './layout/Navbar';
+import Cart from "./layout/Cart";
+// import Category from "./layout/Category";
+// import Product from "./layout/Product";
 
 function App() {
   return (
