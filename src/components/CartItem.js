@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import product from "../assets/product.png"
 import Amount from './Amount'
+import Carousel from './Carousel'
 import Sizes from './Sizes'
 
 export class CartItem extends Component {
@@ -28,7 +29,12 @@ export class CartItem extends Component {
             :
             <Amount />
           }
-          <img className={this.props.big ? 'cartitem__image--big' : 'cartitem__image'} src={product} alt='product' />
+          {this.props.big ?
+            <Carousel />
+            :
+            <img className='cartitem__image' src={product} alt='product' />
+          }
+
         </div>
       </section >
     )

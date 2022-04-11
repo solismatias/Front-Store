@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr;
   margin-bottom: 40px;
   gap: 1rem;
+  max-height: 220px;
   &--big {
     font-size: 2rem;
   }
@@ -16,8 +17,5 @@
   }
   &__image {
     width: 120px;
-    &--big {
-      width: 200px;
-    }
   }
 }

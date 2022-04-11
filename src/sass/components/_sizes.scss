@@ -19,14 +19,12 @@
     }
     &:hover {
       cursor: pointer;
-      background-color: $light-grey;
     }
     &--disabled {
       color: $light-grey;
       border: 1px solid $light-grey;
       &:hover {
         cursor: default;
-        background-color: inherit;
       }
     }
   }
