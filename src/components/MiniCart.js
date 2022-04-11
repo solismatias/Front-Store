@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MiniCartItem from './MiniCartItem'
+import CartItem from './CartItem'
 
 export class MiniCart extends Component {
   render() {
@@ -8,7 +8,7 @@ export class MiniCart extends Component {
         <article className='minicart'>
           <p><b>My Bag.</b> 2 items</p>
           <div className='minicart__itemcontainer'>
-            <MiniCartItem />
+            <CartItem />
           </div>
           <section className='minicart__checkout'>
             <b>Total</b>

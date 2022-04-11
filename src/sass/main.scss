@@ -4,12 +4,15 @@
 // BASE
 @import "base/typography";
 //COMPONENTS
+@import "components/amount";
 @import "components/card";
-@import "components/minicart";
-@import "components/minicartitem";
+@import "components/cartitem";
 @import "components/currency";
+@import "components/minicart";
+@import "components/sizes";
 // LAYOUT
-@import "layout/navbar";
 @import "layout/body";
+@import "layout/cart";
 @import "layout/category";
+@import "layout/navbar";
 @import "layout/product";

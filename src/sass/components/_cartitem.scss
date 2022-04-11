@@ -1,0 +1,23 @@
+.cartitem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 40px;
+  gap: 1rem;
+  &--big {
+    font-size: 2rem;
+  }
+  &__right {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  &__name {
+    margin: 0;
+  }
+  &__image {
+    width: 120px;
+    &--big {
+      width: 200px;
+    }
+  }
+}
