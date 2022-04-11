@@ -34,7 +34,6 @@ export class CartItem extends Component {
             :
             <img className='cartitem__image' src={product} alt='product' />
           }
-
         </div>
       </section >
     )

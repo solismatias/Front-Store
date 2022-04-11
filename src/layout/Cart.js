@@ -7,6 +7,8 @@ export class Cart extends Component {
       <div className='cart'>
         <p className='cart__title'>CART</p>
         <CartItem big />
+        <CartItem big />
+        <CartItem big />
       </div>
     )
   }
