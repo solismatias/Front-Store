@@ -1,6 +1,7 @@
 .currency {
   display: grid;
   position: absolute;
+  justify-content: center;
   top: 10vh;
   height: 170px;
   width: 100px;
@@ -12,7 +13,7 @@
   &__item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     &:hover {
       background-color: $light-grey;
       cursor: pointer;
