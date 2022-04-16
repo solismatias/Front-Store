@@ -4,17 +4,15 @@
   margin-bottom: 40px;
   gap: 1rem;
   max-height: 220px;
-  @media (max-width: 525px) {
-    display: flex;
-    flex-direction: column;
-    max-height: fit-content;
-  }
   &--big {
     font-size: 2rem;
-    @media (max-width: 525px) {
+    @media (max-width: 576px) {
       border: 1px solid $grey;
       border-radius: 5px;
       padding: 10px;
+      display: flex;
+      flex-direction: column;
+      max-height: fit-content;
     }
   }
   &__right {

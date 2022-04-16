@@ -9,6 +9,8 @@ export class Cart extends Component {
         <CartItem big />
         <CartItem big />
         <CartItem big />
+        <CartItem big />
+        <CartItem big />
       </div>
     )
   }

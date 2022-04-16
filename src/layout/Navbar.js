@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import MiniCart from '../components/MiniCart'
-// import Currency from './Currency'
+import Currency from '../components/Currency'
 
 
 export class Navbar extends Component {
   state = {
     isCartOpen: false,
+    isCurrencyOpen: false,
   }
 
   openCloseCart = () => {
     this.setState(state => ({
       isCartOpen: !state.isCartOpen
+    }))
+  }
+  openCloseCurrency = () => {
+    this.setState(state => ({
+      isCurrencyOpen: !state.isCurrencyOpen
     }))
   }
 
@@ -41,14 +47,14 @@ export class Navbar extends Component {
             </defs>
           </svg>
           <ul className='navbar__list navbar__list--right'>
-            <li className='navbar__item'>
+            <li className='navbar__item' onClick={this.openCloseCurrency} >
               <span className='navbar__currency'>$</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 8 4" fill="none">
                 <path className='down' d="M1 0.5L4 3.5L7 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </li>
-            {/* <Currency /> */}
-            <li onClick={this.openCloseCart} className='navbar__item navbar__cart'>
+            {this.state.isCurrencyOpen ? <Currency /> : null}
+            <li className='navbar__item navbar__cart' onClick={this.openCloseCart}>
               {this.state.isCartOpen ?
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z" /></svg>
                 :
