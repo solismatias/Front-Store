@@ -3,6 +3,14 @@ const GET_CATEGORIES = gql`
   {
     categories {
       name
+      products {
+        id
+        name
+        inStock
+        gallery
+        description
+        category
+      }
     }
   }
   `
