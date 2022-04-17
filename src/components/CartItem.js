@@ -9,7 +9,6 @@ export class CartItem extends Component {
     return (
       <section className={this.props.big ? "cartitem cartitem--big" : "cartitem"
       }>
-        {/* {this.props.big ?  : } */}
         < div className='cartitem__left' >
           {this.props.big ?
             <p className='cartitem__name'><b>Apollo</b> <br /> Running Short</p>
