@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client';
+// It’s considered best practice to name all your GraphQL operations because it helps people understand their purpose and helps when debugging.
 const GET_CATEGORIES = gql`
   query getCategories {
     categories {
@@ -44,4 +45,4 @@ query getProducts($category: String!) {
 `
 
 
-export { GET_CATEGORIES, GET_CURRENCIES }
+export { GET_CATEGORIES, GET_CURRENCIES, GET_PRODUCTS }
