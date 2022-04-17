@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import MiniCart from '../components/MiniCart'
 import Currency from '../components/Currency'
-
+import { Query } from '@apollo/client/react/components';
+import { GET_CATEGORIES } from '../utils/queries';
+import { Link } from 'react-router-dom';
 
 export class Navbar extends Component {
   state = {
@@ -25,9 +27,19 @@ export class Navbar extends Component {
       <div className='navbar__container'>
         <nav className='navbar'>
           <ul className='navbar__list navbar__list--left'>
-            <li className='navbar__item'>WOMEN</li>
-            <li className='navbar__item'>MEN</li>
-            <li className='navbar__item'>KIDS</li>
+            <Query query={GET_CATEGORIES}>
+              {({ data, loading, error }) => {
+                if (loading) return <span>Loading...</span>
+                const { categories } = data
+                return categories.map(category =>
+                  <Link className='navbar__item' to={category.name} key={category.name}>
+                    <li>
+                      {category.name.toUpperCase()}
+                    </li>
+                  </Link>
+                )
+              }}
+            </Query>
           </ul>
           <svg className='navbar__logo' xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
             <g clipPath="url(#clip0_150_357)">

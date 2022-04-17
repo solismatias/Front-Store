@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
 
 export class MiniCart extends Component {
@@ -17,7 +18,9 @@ export class MiniCart extends Component {
           <section className='minicart__checkout'>
             <b>Total</b>
             <b className='minicart__total'>$100.00</b>
-            <button className='minicart__button'>VIEW BAG</button>
+            <Link to={"cart"}>
+              <button className='minicart__button'>VIEW BAG</button>
+            </Link>
             <button className='minicart__button minicart__button--right'>CHECK OUT</button>
           </section>
         </article>
