@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Card from '../components/Card'
 
-export class Category extends Component {
+class Category extends Component {
   render() {
     return (
       <div className='category'>
