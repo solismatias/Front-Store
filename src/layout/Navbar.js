@@ -34,7 +34,7 @@ export class Navbar extends Component {
                 return categories.map(category =>
                   <Link className='navbar__item' to={`/category/${category.name}`} key={category.name} >
                     <li>
-                      {category.name.toUpperCase()}
+                      {category.name}
                     </li>
                   </Link>
                 )
