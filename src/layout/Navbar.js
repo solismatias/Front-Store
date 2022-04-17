@@ -32,7 +32,7 @@ export class Navbar extends Component {
                 if (loading) return <span>Loading...</span>
                 const { categories } = data
                 return categories.map(category =>
-                  <Link className='navbar__item' to={category.name} key={category.name}>
+                  <Link className='navbar__item' to={`/category/${category.name}`} key={category.name} >
                     <li>
                       {category.name.toUpperCase()}
                     </li>
@@ -80,7 +80,7 @@ export class Navbar extends Component {
             {this.state.isCartOpen ? <MiniCart /> : null}
           </ul>
         </nav>
-      </div>
+      </div >
     )
   }
 }

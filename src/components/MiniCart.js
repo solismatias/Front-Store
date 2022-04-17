@@ -18,7 +18,7 @@ export class MiniCart extends Component {
           <section className='minicart__checkout'>
             <b>Total</b>
             <b className='minicart__total'>$100.00</b>
-            <Link to={"cart"}>
+            <Link to={"/cart"}>
               <button className='minicart__button'>VIEW BAG</button>
             </Link>
             <button className='minicart__button minicart__button--right'>CHECK OUT</button>
