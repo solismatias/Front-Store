@@ -17,7 +17,7 @@ export class App extends Component {
             if (loading) return <p>Loading...</p>
             return (
               <Switch>
-                <Route path='/category/:name' component={Category} />
+                <Route path='/category/:title' component={Category} />
                 <Route path='/product/:id' component={Product} />
                 <Route path='/cart' component={Cart} />
                 <Redirect to={`/category/${data.categories[0].name}`} />

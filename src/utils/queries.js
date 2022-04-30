@@ -6,7 +6,7 @@ const GET_CATEGORIES = gql`
       name
     }
   }
-  `
+`
 const GET_CURRENCIES = gql`
   query getCurrencies{
     currencies {
@@ -16,33 +16,60 @@ const GET_CURRENCIES = gql`
   }
 `
 const GET_PRODUCTS = gql`
-query getProducts($category: String!) {
-  category(input: { title: $category }) {
-    name
-    products {
-      id
+  query getProducts($category: String!) {
+    category(input: { title: $category }) {
       name
-      gallery
-      attributes {
+      products {
+        id
         name
-        type
-        items {
-          displayValue
-          value
+        inStock
+        gallery
+        attributes {
+          name
+          type
+          items {
+            displayValue
+            value
+          }
         }
-      }
-      inStock
-      prices {
-        currency {
-          label
-          symbol
+        prices {
+          currency {
+            label
+            symbol
+          }
+          amount
         }
-        amount
       }
     }
   }
-}
+`
+const GET_PRODUCT = gql`
+  query getProduct($id: String!) {
+      product(id: $id) {
+        id
+        name
+        inStock
+        gallery
+        description
+        attributes {
+          name
+          type
+          items {
+            displayValue
+            value
+          }
+        }
+        prices {
+          currency {
+            label
+            symbol
+          }
+          amount
+        }
+        brand
+      }
+  }
 `
 
 
-export { GET_CATEGORIES, GET_CURRENCIES, GET_PRODUCTS }
+export { GET_CATEGORIES, GET_CURRENCIES, GET_PRODUCTS, GET_PRODUCT }
