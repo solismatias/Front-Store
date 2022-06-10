@@ -1,37 +1,40 @@
 import React, { Component } from 'react'
-import product from "../assets/product.png"
 import Amount from './Amount'
 import Carousel from './Carousel'
 import Sizes from './Sizes'
+import { connect } from 'react-redux'
+
 
 export class CartItem extends Component {
   render() {
+    const { product } = this.props
+    console.log(product)
+    console.log(this.props)
     return (
-      <section className={this.props.big ? "cartitem cartitem--big" : "cartitem"
-      }>
+      <section className={this.props.big ? "cartitem cartitem--big" : "cartitem"}>
         < div className='cartitem__left' >
           {this.props.big ?
-            <p className='cartitem__name'><b>Apollo</b> <br /> Running Short</p>
+            <p className='cartitem__name'><b>{product.item.brand}</b> <br />{product.item.name}</p>
             :
-            <p className='cartitem__name'>Apollo <br /> Running Short</p>
+            <p className='cartitem__name'>{product.item.brand}<br />{product.item.name}</p>
           }
-          < p className='cartitem__price' > <b>$50.00</b></p >
+          < p className='cartitem__price' > <b>{this.props.currency.symbol}{product.item.prices[product.item.prices.findIndex((e) => e.currency.symbol === this.props.currency.symbol)].amount}</b></p >
           {this.props.big ?
-            <Sizes big />
+            <Sizes big attributes={product.item.attributes} selectedAttributes={product.attributes} />
             :
-            <Sizes />
+            <Sizes attributes={product.item.attributes} selectedAttributes={product.attributes} />
           }
         </div >
         <div className='cartitem__right'>
           {this.props.big ?
-            <Amount big />
+            <Amount big amount={product.amount} />
             :
-            <Amount />
+            <Amount amount={product.amount} />
           }
           {this.props.big ?
-            <Carousel />
+            <Carousel images={product.item.gallery} />
             :
-            <img className='cartitem__image' src={product} alt='product' />
+            <img className='cartitem__image' src={product.item.gallery[0]} alt='product' />
           }
         </div>
       </section >
@@ -39,4 +42,8 @@ export class CartItem extends Component {
   }
 }
 
-export default CartItem
+const mapStateToProps = state => ({
+  currency: state.currency,
+});
+
+export default connect(mapStateToProps)(CartItem);

@@ -24,6 +24,12 @@
   }
   &__miniimage {
     max-width: 100px;
+    // transition: $bezier;
+    &:hover {
+      // transform: scale(1.03);
+      cursor: pointer;
+      @include shadow();
+    }
   }
   &__image {
     width: 100%;
@@ -60,13 +66,36 @@
     width: 60px;
     height: 40px;
     border: 1px solid $black;
+    transition: $bezier;
     &:hover {
       cursor: pointer;
-      background-color: $light-grey;
+      @include shadow();
     }
     &--disabled {
       color: $light-grey;
       border: 1px solid $light-grey;
+    }
+    &--selected {
+      transform: scale(1.03);
+      @include shadow();
+      background-color: $black;
+      color: $white;
+    }
+  }
+  &__swatch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $white;
+    transition: $bezier;
+    &--selected {
+      outline: 2px solid $green;
+    }
+    &:hover {
+      cursor: pointer;
+      @include shadow();
     }
   }
   &__checkout {

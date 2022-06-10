@@ -9,11 +9,11 @@ export class MiniCart extends Component {
         <article className='minicart'>
           <p><b>My Bag.</b> 2 items</p>
           <div className='minicart__itemcontainer'>
+            {/* <CartItem />
             <CartItem />
             <CartItem />
             <CartItem />
-            <CartItem />
-            <CartItem />
+            <CartItem /> */}
           </div>
           <section className='minicart__checkout'>
             <b>Total</b>

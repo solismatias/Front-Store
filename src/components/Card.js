@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { connect } from 'react-redux'
 // import producto from "../assets/product.png"
 
 export class Card extends Component {
@@ -25,11 +26,15 @@ export class Card extends Component {
             null
           }
           <p className='card__name'>{product.name}</p>
-          <p className='card__price'>{product.prices[0].currency.symbol}{product.prices[0].amount}</p>
+          <p className='card__price'>{this.props.currency.symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === this.props.currency.symbol)].amount}</p>
         </div >
       </Link>
     )
   }
 }
 
-export default Card
+const mapStateToProps = state => ({
+  currency: state.currency
+});
+
+export default connect(mapStateToProps)(Card);

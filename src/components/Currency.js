@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Query } from '@apollo/client/react/components';
 import { GET_CURRENCIES } from '../utils/queries';
+import { setCurrency } from '../redux/currencySlice';
+import { connect } from 'react-redux'
 export class Currency extends Component {
   render() {
     return (
@@ -9,7 +11,7 @@ export class Currency extends Component {
           {({ data, loading, error }) => {
             if (loading) return <span>Loading...</span>
             const { currencies } = data
-            return currencies.map(currency => <li className='currency__item' key={currency.symbol}>{currency.symbol} {currency.label}</li>)
+            return currencies.map(currency => <li onClick={() => this.props.setCurrency({ label: currency.label, symbol: currency.symbol })} className='currency__item' key={currency.symbol}>{currency.symbol} {currency.label}</li>)
           }}
         </Query>
       </ul>
@@ -17,4 +19,8 @@ export class Currency extends Component {
   }
 }
 
-export default Currency
+const mapStateToProps = state => ({
+  currency: state.currency,
+});
+
+export default connect(mapStateToProps, { setCurrency })(Currency);

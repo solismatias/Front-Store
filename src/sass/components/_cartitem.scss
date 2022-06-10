@@ -6,9 +6,11 @@
   max-height: 220px;
   &--big {
     font-size: 2rem;
+    max-height: 400px;
     @media (max-width: 576px) {
       border: 1px solid $grey;
       border-radius: 5px;
+      margin-bottom: 60px;
       padding: 10px;
       display: flex;
       flex-direction: column;
@@ -19,6 +21,9 @@
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+  }
+  &__price {
+    margin: 10px 0;
   }
   &__name {
     margin: 0;

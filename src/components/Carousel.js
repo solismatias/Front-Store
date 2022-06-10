@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import product from "../assets/product.png"
 
 export class Carousel extends Component {
   constructor(props) {
@@ -50,12 +49,11 @@ export class Carousel extends Component {
     return (
       <div className='carousel'>
         <div className="carousel__container" ref={this.carousel} >
-          <div className="carousel__item" >
-            <img className="carousel__image" src={product} alt='product' />
-          </div>
-          <div className="carousel__item" >
-            <img className="carousel__image" src={product} alt='product' />
-          </div>
+          {this.props.images.map(image => (
+            <div className="carousel__item" key={image} >
+              <img className="carousel__image" src={image} alt='product' />
+            </div>
+          ))}
         </div >
         <div className='carousel__controllers'>
           <span className='carousel__arrow' onClick={this.prevSlide}>
