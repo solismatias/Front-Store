@@ -25,7 +25,8 @@ export class Product extends Component {
   }
 
   addToCart(product) {
-    this.props.addItem({ attributes: this.state.selectedAtributes, item: product })
+    console.log({ attributes: this.state.selectedAtributes, item: product })
+    this.props.addItem({ attributes: this.state.selectedAtributes, item: product, amount: 1 })
   }
 
   render() {

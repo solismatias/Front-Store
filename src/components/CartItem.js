@@ -5,11 +5,10 @@ import Sizes from './Sizes'
 import { connect } from 'react-redux'
 
 
+
 export class CartItem extends Component {
   render() {
     const { product } = this.props
-    console.log(product)
-    console.log(this.props)
     return (
       <section className={this.props.big ? "cartitem cartitem--big" : "cartitem"}>
         < div className='cartitem__left' >
@@ -20,9 +19,9 @@ export class CartItem extends Component {
           }
           < p className='cartitem__price' > <b>{this.props.currency.symbol}{product.item.prices[product.item.prices.findIndex((e) => e.currency.symbol === this.props.currency.symbol)].amount}</b></p >
           {this.props.big ?
-            <Sizes big attributes={product.item.attributes} selectedAttributes={product.attributes} />
+            <Sizes big attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
             :
-            <Sizes attributes={product.item.attributes} selectedAttributes={product.attributes} />
+            <Sizes attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
           }
         </div >
         <div className='cartitem__right'>

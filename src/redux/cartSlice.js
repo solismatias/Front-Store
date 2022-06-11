@@ -9,14 +9,18 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      let product = { attributes: action.payload.attributes, item: action.payload.item, amount: 1 }
+      let product = { attributes: action.payload.attributes, item: action.payload.item, amount: action.payload.amount, id: action.payload.item.id }
       state.products.push(product)
+    },
+    updateAttribute: (state, action) => {
+      let item = action.payload
+      let index = state.products.findIndex(e => e.id === item.productId)
+      state.products[index].attributes[item.name] = item.value
     }
   }
 })
 
-export const { addItem } = cartSlice.actions
+export const { addItem, updateAttribute } = cartSlice.actions
 
-// export const selectCartItems = (state) => state.cart
 
 export default cartSlice.reducer
