@@ -19,9 +19,9 @@ export class CartItem extends Component {
           }
           < p className='cartitem__price' > <b>{this.props.currency.symbol}{product.item.prices[product.item.prices.findIndex((e) => e.currency.symbol === this.props.currency.symbol)].amount}</b></p >
           {this.props.big ?
-            <Sizes big attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
+            <Sizes size="big" attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
             :
-            <Sizes attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
+            <Sizes size="small" attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
           }
         </div >
         <div className='cartitem__right'>

@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr;
   margin-bottom: 40px;
   gap: 1rem;
-  max-height: 220px;
   &--big {
     font-size: 2rem;
     max-height: 400px;
@@ -21,14 +20,16 @@
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+    align-items: center;
   }
   &__price {
-    margin: 10px 0;
+    margin: 0;
   }
   &__name {
     margin: 0;
   }
   &__image {
-    width: 120px;
+    width: 130px;
+    height: fit-content;
   }
 }
