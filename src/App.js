@@ -7,14 +7,16 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Product from "./layout/Product";
 import { Query } from '@apollo/client/react/components';
 import { GET_CATEGORIES } from './utils/queries';
+import ErrorMessage from './components/ErrorMessage';
 export class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
         <Query query={GET_CATEGORIES}>
-          {({ loading, data }) => {
+          {({ loading, data, error }) => {
             if (loading) return <p>Loading...</p>
+            if (error) return <ErrorMessage />
             return (
               <Switch>
                 <Route path='/category/:title' component={Category} />

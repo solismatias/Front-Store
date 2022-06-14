@@ -30,6 +30,7 @@ export class Navbar extends Component {
           <ul className='navbar__list navbar__list--left'>
             <Query query={GET_CATEGORIES}>
               {({ data, loading, error }) => {
+                if (error) return <span>Error</span>
                 if (loading) return <span>Loading...</span>
                 const { categories } = data
                 return categories.map(category =>
@@ -39,6 +40,7 @@ export class Navbar extends Component {
                     </li>
                   </Link>
                 )
+
               }}
             </Query>
           </ul>
