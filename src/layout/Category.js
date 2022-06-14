@@ -14,7 +14,7 @@ class Category extends Component {
         <Query query={GET_PRODUCTS} variables={{ category: categoryName }}>
           {({ loading, data, error }) => {
             if (loading) return <Spinner />
-            if (true) return <ErrorMessage />
+            if (error) return <ErrorMessage />
             const { products } = data.category
             return (
               <>
