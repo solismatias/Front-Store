@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
+// React Router
+import { Route, Switch, Redirect } from 'react-router-dom';
+// GraphQL
+import { Query } from '@apollo/client/react/components';
+import { GET_CATEGORIES } from './utils/queries';
+// Style
 import "./sass/main.scss"
+// Component
 import Navbar from './layout/Navbar';
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
-import { Route, Switch, Redirect } from 'react-router-dom';
 import Product from "./layout/Product";
-import { Query } from '@apollo/client/react/components';
-import { GET_CATEGORIES } from './utils/queries';
 import ErrorMessage from './components/ErrorMessage';
 export class App extends Component {
   render() {
