@@ -4,10 +4,6 @@ import CartItem from './CartItem'
 import { connect } from 'react-redux'
 
 export class MiniCart extends Component {
-  state = {
-    totalItems: 0,
-    totalPrice: {}
-  }
   render() {
     let products = this.props.cart.products
     let total = {} // {$:100, ¥: 200, etc}
