@@ -77,4 +77,16 @@
   &__cart {
     position: relative;
   }
+  &__cartnumber {
+    color: $white;
+    background-color: $black;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    left: -5px;
+    top: -5px;
+  }
 }

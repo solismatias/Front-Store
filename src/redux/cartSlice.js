@@ -10,8 +10,7 @@ export const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       let product = { attributes: action.payload.attributes, item: action.payload.item, amount: action.payload.amount, id: action.payload.item.id }
-      state.totalPrice +=
-        state.products.push(product)
+      state.products.push(product)
     },
     updateAttribute: (state, action) => {
       let item = action.payload

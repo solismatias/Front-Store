@@ -23,7 +23,6 @@ export class Product extends Component {
     this.setState(state => (
       state.selectedAtributes = { ...state.selectedAtributes, [name]: item }
     ))
-
   }
 
   addToCart(product) {

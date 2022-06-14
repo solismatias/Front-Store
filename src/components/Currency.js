@@ -6,15 +6,17 @@ import { connect } from 'react-redux'
 export class Currency extends Component {
   render() {
     return (
-      <ul className='currency'>
-        <Query query={GET_CURRENCIES}>
-          {({ data, loading, error }) => {
-            if (loading) return <span>Loading...</span>
-            const { currencies } = data
-            return currencies.map(currency => <li onClick={() => this.props.setCurrency({ label: currency.label, symbol: currency.symbol })} className='currency__item' key={currency.symbol}>{currency.symbol} {currency.label}</li>)
-          }}
-        </Query>
-      </ul>
+      <div className='currency__background' onClick={this.props.close}>
+        <ul className='currency'>
+          <Query query={GET_CURRENCIES}>
+            {({ data, loading, error }) => {
+              if (loading) return <span>Loading...</span>
+              const { currencies } = data
+              return currencies.map(currency => <li onClick={() => this.props.setCurrency({ label: currency.label, symbol: currency.symbol })} className='currency__item' key={currency.symbol}>{currency.symbol} {currency.label}</li>)
+            }}
+          </Query>
+        </ul>
+      </div>
     )
   }
 }
