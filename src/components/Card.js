@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+// Redux
 import { connect } from 'react-redux'
 import { addItem } from '../redux/cartSlice';
+// React Router
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 export class Card extends Component {

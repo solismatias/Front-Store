@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+// Redux
+import { connect } from 'react-redux'
+// Components
 import Amount from './Amount'
 import Carousel from './Carousel'
 import Sizes from './Sizes'
-import { connect } from 'react-redux'
 
 
 

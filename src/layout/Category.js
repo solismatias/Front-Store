@@ -1,10 +1,13 @@
-import { Query } from '@apollo/client/react/components';
 import React, { Component } from 'react'
+// React Router
 import { withRouter } from 'react-router-dom'
+// GraphQL
+import { Query } from '@apollo/client/react/components';
+import { GET_PRODUCTS } from '../utils/queries';
+// Component
 import Card from '../components/Card'
 import ErrorMessage from '../components/ErrorMessage';
 import Spinner from '../components/Spinner';
-import { GET_PRODUCTS } from '../utils/queries';
 
 class Category extends Component {
   render() {

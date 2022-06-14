@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import CartItem from './CartItem'
+// Redux
 import { connect } from 'react-redux'
+// React Router
+import { Link } from 'react-router-dom'
+// Components
+import CartItem from './CartItem'
 import Modal from './Modal'
 
 export class MiniCart extends Component {

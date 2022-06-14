@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { Query } from '@apollo/client/react/components';
-import { GET_PRODUCT } from '../utils/queries';
-import { withRouter } from 'react-router-dom';
+// Redux
 import { connect } from 'react-redux'
 import { addItem } from '../redux/cartSlice';
+// React Router
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+// GraphQl
+import { Query } from '@apollo/client/react/components';
+import { GET_PRODUCT } from '../utils/queries';
 
 export class Product extends Component {
 

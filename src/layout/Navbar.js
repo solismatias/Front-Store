@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import MiniCart from '../components/MiniCart'
-import Currency from '../components/Currency'
+// Redux
+import { connect } from 'react-redux'
+// GraphQL
 import { Query } from '@apollo/client/react/components';
 import { GET_CATEGORIES } from '../utils/queries';
+// React Router
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
+// Component
+import MiniCart from '../components/MiniCart'
+import Currency from '../components/Currency'
 export class Navbar extends Component {
   state = {
     isCartOpen: false,

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import CartItem from '../components/CartItem'
+// Redux
 import { connect } from 'react-redux'
+// Component
+import CartItem from '../components/CartItem'
 
 
 export class Cart extends Component {
