@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addItem, updateAttribute } from '../redux/cartSlice'
+import { updateAttribute } from '../redux/cartSlice'
 import Square from './Square'
 
 

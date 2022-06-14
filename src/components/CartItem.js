@@ -26,9 +26,9 @@ export class CartItem extends Component {
         </div >
         <div className='cartitem__right'>
           {this.props.big ?
-            <Amount big amount={product.amount} />
+            <Amount id={product.id} big amount={product.amount} />
             :
-            <Amount amount={product.amount} />
+            <Amount id={product.id} amount={product.amount} />
           }
           {this.props.big ?
             <Carousel images={product.item.gallery} />

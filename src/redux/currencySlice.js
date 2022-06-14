@@ -25,8 +25,6 @@ export const currencySlice = createSlice({
     setCurrency: (state, action) => {
       state.label = action.payload.label
       state.symbol = action.payload.symbol
-      console.log(state.label)
-      console.log(state.symbol)
     }
   }
 })
