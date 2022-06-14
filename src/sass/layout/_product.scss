@@ -140,6 +140,11 @@
         background-color: $light-grey;
       }
     }
+    &--clicked {
+      outline: 2px solid $green;
+      outline-offset: 3px;
+      @include shake-animation;
+    }
   }
   &__name {
     font-size: 2rem;

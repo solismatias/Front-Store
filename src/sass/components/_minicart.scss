@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: $white;
-  max-width: 325px;
+  width: 325px;
   height: 540px;
   position: absolute;
   top: 0;
@@ -42,6 +42,18 @@
   }
   &__total {
     justify-self: end;
+  }
+  &__emptycart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__emptytitle {
+    font-size: 2rem;
+  }
+  &__emptytext {
+    font-size: 1.1rem;
   }
   &__button {
     width: 140px;
