@@ -2,8 +2,17 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
 import { connect } from 'react-redux'
+import Modal from './Modal'
 
 export class MiniCart extends Component {
+  state = {
+    isModalOpen: false
+  }
+  openCloseModal = () => {
+    this.setState(state => ({
+      isModalOpen: !state.isModalOpen
+    }))
+  }
   render() {
     let products = this.props.cart.products
     let total = {} // {$:100, ¥: 200, etc}
@@ -42,7 +51,8 @@ export class MiniCart extends Component {
                 <Link to={"/cart"}>
                   <button className='minicart__button' onClick={this.props.close}>VIEW BAG</button>
                 </Link>
-                <button className='minicart__button minicart__button--right' onClick={this.props.close}>CHECK OUT</button>
+                <button className='minicart__button minicart__button--right' onClick={this.props.close && this.openCloseModal}>CHECK OUT</button>
+                {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={this.props.currency.symbol} amount={Math.round(total[this.props.currency.symbol] * 100) / 100} /> : null}
               </>
               :
               null

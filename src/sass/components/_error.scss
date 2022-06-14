@@ -1,0 +1,9 @@
+.error {
+  &__title {
+    font-size: 2rem;
+  }
+  &__span {
+    color: $green;
+    font-weight: bold;
+  }
+}

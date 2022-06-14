@@ -2,6 +2,8 @@ import { Query } from '@apollo/client/react/components';
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import Card from '../components/Card'
+import ErrorMessage from '../components/ErrorMessage';
+import Spinner from '../components/Spinner';
 import { GET_PRODUCTS } from '../utils/queries';
 
 class Category extends Component {
@@ -10,8 +12,9 @@ class Category extends Component {
     return (
       <div className='category'>
         <Query query={GET_PRODUCTS} variables={{ category: categoryName }}>
-          {({ loading, data }) => {
-            if (loading) return <p>Loading...</p>
+          {({ loading, data, error }) => {
+            if (loading) return <Spinner />
+            if (true) return <ErrorMessage />
             const { products } = data.category
             return (
               <>
