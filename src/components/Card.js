@@ -12,7 +12,7 @@ export class Card extends Component {
   }
   productInCart(product) {
     let index = this.props.cart.products.findIndex(e => e.id === product.id)
-    return index != -1
+    return index !== -1
   }
   render() {
     const { product } = this.props

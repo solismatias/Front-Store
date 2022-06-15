@@ -34,7 +34,7 @@ export class Product extends Component {
 
   productInCart(product) {
     let index = this.props.cart.products.findIndex(e => e.id === product.id)
-    return index != -1
+    return index !== -1
   }
 
   render() {
@@ -60,12 +60,11 @@ export class Product extends Component {
                   {product.attributes.map(attribute => (
                     <section className='product__attributes' key={attribute.name}>
                       <b>{attribute.name}:</b>
-
                       {attribute.type === "swatch" ?
                         <div className='product__options'>
                           {attribute.items.map((item, index) => (
                             <span
-                              className={item.value === this.state.selectedAtributes[attribute.name] || index === 0 && !this.state.selectedAtributes[attribute.name] ? 'product__swatch product__swatch--selected' : 'product__swatch'}
+                              className={item.value === this.state.selectedAtributes[attribute.name] || (index === 0 && !this.state.selectedAtributes[attribute.name]) ? 'product__swatch product__swatch--selected' : 'product__swatch'}
                               style={{ backgroundColor: item.value }}
                               key={item.value}
                               onClick={() => this.selectItem(index, attribute)}>
@@ -76,7 +75,7 @@ export class Product extends Component {
                         <div className='product__options'>
                           {attribute.items.map((item, index) => (
                             <span
-                              className={item.value === this.state.selectedAtributes[attribute.name] || index === 0 && !this.state.selectedAtributes[attribute.name] ? 'product__square product__square--selected' : 'product__square'}
+                              className={item.value === this.state.selectedAtributes[attribute.name] || (index === 0 && !this.state.selectedAtributes[attribute.name]) ? 'product__square product__square--selected' : 'product__square'}
                               key={item.value}
                               onClick={() => { this.selectItem(index, attribute) }}>
                               {item.value}

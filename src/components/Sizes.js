@@ -14,7 +14,7 @@ export class Sizes extends Component {
   }
 
   attributeIsSelected(item, attribute, index) {
-    return item.value === this.props.selectedAttributes[attribute.name] || index === 0 && !this.props.selectedAttributes[attribute.name]
+    return item.value === this.props.selectedAttributes[attribute.name] || (index === 0 && !this.props.selectedAttributes[attribute.name])
   }
 
 

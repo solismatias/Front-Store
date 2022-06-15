@@ -9,7 +9,7 @@ export class ErrorMessage extends Component {
         <p>This project fetch data from an GraphQL Endpoint</p>
         <ul>
           <li>
-            <a href='https://github.com/scandiweb/junior-react-endpoint' target="_blank" className='error__link'>DOWNLOAD</a> and install the GraphQL Endpoint
+            <a href='https://github.com/scandiweb/junior-react-endpoint' target="_blank" rel="noreferrer" className='error__link'>DOWNLOAD</a> and install the GraphQL Endpoint
           </li>
           <li>
             Reinstall all dependencies
