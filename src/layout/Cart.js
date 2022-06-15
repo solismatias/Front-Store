@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // Component
 import CartItem from '../components/CartItem'
+import EmptyCart from '../components/EmptyCart';
 
 
 export class Cart extends Component {
@@ -10,9 +11,13 @@ export class Cart extends Component {
     return (
       <div className='cart'>
         <p className='cart__title'>CART</p>
-        {this.props.cart.products.map(product => (
-          <CartItem big product={product} key={product.item.id} />
-        ))}
+        {this.props.cart.products.length > 0 ?
+          this.props.cart.products.map(product => (
+            <CartItem big product={product} key={product.item.id} />
+          ))
+          :
+          <EmptyCart />
+        }
       </div>
     )
   }
