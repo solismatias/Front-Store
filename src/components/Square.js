@@ -9,35 +9,33 @@ export default class Square extends Component {
         <span
           className={selected ?
             size === "small" ?
-              'product__swatch--small product__swatch--selected'
+              'product__swatch--small product__swatch--selected incart'
               :
-              'product__swatch product__swatch--selected'
+              'product__swatch product__swatch--selected incart incart'
             :
             size === "small" ?
-              'product__swatch--small'
+              'product__swatch--small incart'
               :
-              'product__swatch'
+              'product__swatch incart'
           }
           style={{ backgroundColor: value }}
           key={value}
-          onClick={click}
         />
         :
 
         <span
           className={selected ?
             size === "small" ?
-              'product__square product__square--small product__square--selected'
+              'product__square product__square--small product__square--selected incart'
               :
-              'product__square product__square--selected'
+              'product__square product__square--selected incart'
             :
             size === "small" ?
-              'product__square product__square--small'
+              'product__square product__square--small incart'
               :
-              'product__square'
+              'product__square incart'
           }
           key={value}
-          onClick={click}
         >
           {value}
         </span>

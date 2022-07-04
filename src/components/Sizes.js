@@ -27,7 +27,7 @@ export class Sizes extends Component {
             <b>{attribute.name}:</b>
             <div className='product__options'>
               {attribute.items.map((item, index) => (
-                <Square item={item} key={item.value} type={attribute.type} size={size} selected={this.attributeIsSelected(item, attribute, index)} click={() => this.changeAttribute(attribute, product, index)} />
+                <Square item={item} key={item.value} type={attribute.type} size={size} selected={this.attributeIsSelected(item, attribute, index)} />
               ))}
             </div>
           </section>
