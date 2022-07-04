@@ -22,6 +22,10 @@ export class MiniCart extends Component {
     const { symbol } = this.props.currency
     const { close } = this.props
     const total = {} // {$:100, ¥: 200, etc}
+    let count = 0
+    for (const item of products) {
+      count += item.amount
+    }
     for (const item of products) {
       for (const price of item.item.prices) {
         if (total[price.currency.symbol] === undefined) {
@@ -35,7 +39,7 @@ export class MiniCart extends Component {
     return (
       <div className='minicart__background'>
         <article className='minicart'>
-          <p><b>My Bag.</b> {products.length} items</p>
+          <p><b>My Bag.</b> {count} items</p>
           {products.length > 0 ?
             <div className='minicart__itemcontainer'>
               {products.map(product => (
