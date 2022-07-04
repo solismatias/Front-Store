@@ -22,6 +22,7 @@ const GET_PRODUCTS = gql`
       products {
         id
         name
+        brand
         inStock
         gallery
         attributes {
@@ -48,6 +49,7 @@ const GET_PRODUCT = gql`
       product(id: $id) {
         id
         name
+        brand
         inStock
         gallery
         description
@@ -66,7 +68,6 @@ const GET_PRODUCT = gql`
           }
           amount
         }
-        brand
       }
   }
 `
