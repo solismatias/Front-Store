@@ -17,7 +17,6 @@ export class Card extends Component {
   render() {
     const { product } = this.props
     const { symbol } = this.props.currency
-    console.log(product)
     return (
       <div className='card' >
         <Link to={`/product/${product.id}`}>
