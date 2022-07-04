@@ -20,7 +20,7 @@ export class CartItem extends Component {
             :
             <p className='cartitem__name'>{product.item.brand}<br />{product.item.name}</p>
           }
-          < p className='cartitem__price' > <b>{symbol}{product.item.prices[product.item.prices.findIndex((e) => e.currency.symbol === symbol)].amount}</b></p >
+          < p className='cartitem__price' > <b>{symbol}{product.item.prices[product.item.prices.findIndex((e) => e.currency.symbol === symbol)].amount.toFixed(2)}</b></p >
           {big ?
             <Sizes size="big" attributes={product.item.attributes} selectedAttributes={product.attributes} product={product} />
             :

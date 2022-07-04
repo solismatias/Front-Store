@@ -51,14 +51,14 @@ export class MiniCart extends Component {
           }
           <section className='minicart__checkout'>
             <b>Total</b>
-            <b className='minicart__total'>{symbol}{Math.round(total[symbol] * 100) / 100 || 0}</b>
+            <b className='minicart__total'>{symbol}{total[symbol] ? total[symbol].toFixed(2) : "0.00"}</b>
             {products.length > 0 ?
               <>
                 <Link to={"/cart"}>
                   <button className='minicart__button' onClick={close}>VIEW BAG</button>
                 </Link>
                 <button className='minicart__button minicart__button--right' onClick={close && this.openCloseModal}>CHECK OUT</button>
-                {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={symbol} amount={Math.round(total[symbol] * 100) / 100} /> : null}
+                {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={symbol} amount={total[symbol].toFixed(2)} /> : null}
               </>
               :
               null

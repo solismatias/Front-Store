@@ -89,7 +89,7 @@ export class Product extends Component {
                   ))}
                   <section className='product__checkout'>
                     <b>PRICE:</b>
-                    <b>{symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === symbol)].amount}</b>
+                    <b>{symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === symbol)].amount.toFixed(2)}</b>
                     {product.inStock ?
                       this.productInCart(product) ?
                         <Link to={"/cart"}>

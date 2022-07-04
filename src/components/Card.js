@@ -45,7 +45,7 @@ export class Card extends Component {
             null
         }
         <p className='card__name'>{product.brand} {product.name}</p>
-        <p className='card__price'>{symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === symbol)].amount}</p>
+        <p className='card__price'>{symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === symbol)].amount.toFixed(2)}</p>
       </div >
     )
   }
