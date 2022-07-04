@@ -48,13 +48,16 @@ export class Product extends Component {
             const { product } = data
             return (
               <>
-                <aside className='product__gallery'>
-                  {product.gallery.map((image, index) => {
-                    return <img className='product__miniimage' key={image} src={image} alt="product item" onClick={() => this.setSelectedImage(index)} />
-                  })}
-                </aside>
-                <div className='product__image-container'>
-                  <img className='product__image' src={product.gallery[this.state.selectedImage]} alt="product item" />
+                <div className='product__images'>
+                  {product.inStock ? null : <span className='card__stock card__stock--big'>OUT OF STOCK</span>}
+                  <aside className='product__gallery'>
+                    {product.gallery.map((image, index) => {
+                      return <img className='product__miniimage' key={image} src={image} alt="product item" onClick={() => this.setSelectedImage(index)} />
+                    })}
+                  </aside>
+                  <div className='product__image-container'>
+                    <img className='product__image' src={product.gallery[this.state.selectedImage]} alt="product item" />
+                  </div>
                 </div>
                 <article className='product__info'>
                   <p className='product__name'><b>{product.brand}</b><br />{product.name}</p>
