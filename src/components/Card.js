@@ -16,6 +16,7 @@ export class Card extends Component {
   }
   render() {
     const { product } = this.props
+    const { symbol } = this.props.currency
     return (
       <div className='card' >
         <Link to={`/product/${product.id}`}>
@@ -44,7 +45,7 @@ export class Card extends Component {
             null
         }
         <p className='card__name'>{product.name}</p>
-        <p className='card__price'>{this.props.currency.symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === this.props.currency.symbol)].amount}</p>
+        <p className='card__price'>{symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === symbol)].amount}</p>
       </div >
     )
   }

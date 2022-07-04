@@ -18,7 +18,9 @@ export class MiniCart extends Component {
     }))
   }
   render() {
-    const products = this.props.cart.products
+    const { products } = this.props.cart
+    const { symbol } = this.props.currency
+    const { close } = this.props
     const total = {} // {$:100, ¥: 200, etc}
     for (const item of products) {
       for (const price of item.item.prices) {
@@ -36,7 +38,7 @@ export class MiniCart extends Component {
           <p><b>My Bag.</b> {products.length} items</p>
           {products.length > 0 ?
             <div className='minicart__itemcontainer'>
-              {this.props.cart.products.map(product => (
+              {products.map(product => (
                 <CartItem product={product} key={product.item.id} />
               ))}
             </div>
@@ -45,14 +47,14 @@ export class MiniCart extends Component {
           }
           <section className='minicart__checkout'>
             <b>Total</b>
-            <b className='minicart__total'>{this.props.currency.symbol}{Math.round(total[this.props.currency.symbol] * 100) / 100 || 0}</b>
+            <b className='minicart__total'>{symbol}{Math.round(total[symbol] * 100) / 100 || 0}</b>
             {products.length > 0 ?
               <>
                 <Link to={"/cart"}>
-                  <button className='minicart__button' onClick={this.props.close}>VIEW BAG</button>
+                  <button className='minicart__button' onClick={close}>VIEW BAG</button>
                 </Link>
-                <button className='minicart__button minicart__button--right' onClick={this.props.close && this.openCloseModal}>CHECK OUT</button>
-                {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={this.props.currency.symbol} amount={Math.round(total[this.props.currency.symbol] * 100) / 100} /> : null}
+                <button className='minicart__button minicart__button--right' onClick={close && this.openCloseModal}>CHECK OUT</button>
+                {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={symbol} amount={Math.round(total[symbol] * 100) / 100} /> : null}
               </>
               :
               null

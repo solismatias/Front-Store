@@ -39,6 +39,7 @@ export class Product extends Component {
 
   render() {
     const productId = this.props.match.params.id;
+    const { symbol } = this.props.currency
     return (
       <div className='product'>
         <Query query={GET_PRODUCT} variables={{ id: productId }}>
@@ -87,7 +88,7 @@ export class Product extends Component {
                   ))}
                   <section className='product__checkout'>
                     <b>PRICE:</b>
-                    <b>{this.props.currency.symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === this.props.currency.symbol)].amount}</b>
+                    <b>{symbol}{product.prices[product.prices.findIndex((e) => e.currency.symbol === symbol)].amount}</b>
                     {product.inStock ?
                       this.productInCart(product) ?
                         <Link to={"/cart"}>

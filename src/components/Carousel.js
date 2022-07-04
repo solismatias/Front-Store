@@ -46,10 +46,11 @@ export class Carousel extends Component {
   };
 
   render() {
+    const { images } = this.props
     return (
       <div className='carousel'>
         <div className="carousel__container" ref={this.carousel} >
-          {this.props.images.map(image => (
+          {images.map(image => (
             <div className="carousel__item" key={image} >
               <img className="carousel__image" src={image} alt='product' />
             </div>

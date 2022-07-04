@@ -8,11 +8,12 @@ import EmptyCart from '../components/EmptyCart';
 
 export class Cart extends Component {
   render() {
+    const { products } = this.props.cart
     return (
       <div className='cart'>
         <p className='cart__title'>CART</p>
-        {this.props.cart.products.length > 0 ?
-          this.props.cart.products.map(product => (
+        {products.length > 0 ?
+          products.map(product => (
             <CartItem big product={product} key={product.item.id} />
           ))
           :

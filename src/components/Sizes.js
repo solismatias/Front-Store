@@ -19,15 +19,15 @@ export class Sizes extends Component {
 
 
   render() {
-    const { product } = this.props
+    const { product, attributes, size } = this.props
     return (
       <div className='sizes'>
-        {this.props.attributes.map(attribute => (
+        {attributes.map(attribute => (
           <section className='product__attributes' key={attribute.name}>
             <b>{attribute.name}:</b>
             <div className='product__options'>
               {attribute.items.map((item, index) => (
-                <Square item={item} key={item.value} type={attribute.type} size={this.props.size} selected={this.attributeIsSelected(item, attribute, index)} click={() => this.changeAttribute(attribute, product, index)} />
+                <Square item={item} key={item.value} type={attribute.type} size={size} selected={this.attributeIsSelected(item, attribute, index)} click={() => this.changeAttribute(attribute, product, index)} />
               ))}
             </div>
           </section>
