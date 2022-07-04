@@ -68,7 +68,7 @@ export class Navbar extends Component {
           <ul className='navbar__list navbar__list--right'>
             <li className='navbar__item' onClick={this.openCloseCurrency} >
               <span className='navbar__currency'>$</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 8 4" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" transform={this.state.isCurrencyOpen ? "scale(1, -1) translate(0, 0)" : ""} width="10" height="10" viewBox="0 0 8 4" fill="none">
                 <path className='down' d="M1 0.5L4 3.5L7 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </li>

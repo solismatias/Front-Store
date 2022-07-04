@@ -14,9 +14,11 @@
   &__item {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    width: inherit;
+    font-weight: bold;
     &:hover {
-      background-color: $light-grey;
+      background-color: #EEEEEE;
       cursor: pointer;
     }
   }
