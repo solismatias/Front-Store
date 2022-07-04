@@ -17,6 +17,13 @@ export class MiniCart extends Component {
       isModalOpen: !state.isModalOpen
     }))
   }
+
+  shouldCloseCart = (e) => {
+    if (e.target.className === "minicart__background") {
+      this.props.close()
+    }
+  }
+
   render() {
     const { products } = this.props.cart
     const { symbol } = this.props.currency
@@ -37,7 +44,7 @@ export class MiniCart extends Component {
     }
 
     return (
-      <div className='minicart__background'>
+      <div className='minicart__background' onClick={this.shouldCloseCart}>
         <article className='minicart'>
           <p><b>My Bag.</b> {count} items</p>
           {products.length > 0 ?
