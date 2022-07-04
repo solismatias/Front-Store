@@ -21,8 +21,8 @@ export class Product extends Component {
   }
 
   selectItem(index, attribute) {
-    let name = attribute.name
-    let item = attribute.items[index].value
+    const name = attribute.name
+    const item = attribute.items[index].value
     this.setState(state => (
       state.selectedAtributes = { ...state.selectedAtributes, [name]: item }
     ))
@@ -33,7 +33,7 @@ export class Product extends Component {
   }
 
   productInCart(product) {
-    let index = this.props.cart.products.findIndex(e => e.id === product.id)
+    const index = this.props.cart.products.findIndex(e => e.id === product.id)
     return index !== -1
   }
 

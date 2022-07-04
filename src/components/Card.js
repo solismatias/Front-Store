@@ -11,7 +11,7 @@ export class Card extends Component {
     this.props.addItem({ attributes: {}, item: product, amount: 1 })
   }
   productInCart(product) {
-    let index = this.props.cart.products.findIndex(e => e.id === product.id)
+    const index = this.props.cart.products.findIndex(e => e.id === product.id)
     return index !== -1
   }
   render() {

@@ -18,10 +18,10 @@ export class MiniCart extends Component {
     }))
   }
   render() {
-    let products = this.props.cart.products
-    let total = {} // {$:100, ¥: 200, etc}
-    for (let item of products) {
-      for (let price of item.item.prices) {
+    const products = this.props.cart.products
+    const total = {} // {$:100, ¥: 200, etc}
+    for (const item of products) {
+      for (const price of item.item.prices) {
         if (total[price.currency.symbol] === undefined) {
           total[price.currency.symbol] = price.amount * item.amount
         } else {
