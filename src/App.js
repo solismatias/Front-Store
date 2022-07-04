@@ -12,6 +12,7 @@ import Cart from "./layout/Cart";
 import Category from "./layout/Category";
 import Product from "./layout/Product";
 import ErrorMessage from './components/ErrorMessage';
+import ProductContainer from './layout/ProductContainer';
 export class App extends Component {
   render() {
     return (
@@ -24,7 +25,7 @@ export class App extends Component {
             return (
               <Switch>
                 <Route path='/category/:title' component={Category} />
-                <Route path='/product/:id' component={Product} />
+                <Route path='/product/:id' component={ProductContainer} />
                 <Route path='/cart' component={Cart} />
                 <Redirect to={`/category/${data.categories[0].name}`} />
                 {/* Why data.categories[0].name instead of hardcoding "/all"? Because in the future, the category "all" could be renamed or deleted, so it's better to set the URL dynamically*/}
