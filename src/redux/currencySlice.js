@@ -1,5 +1,5 @@
 // A "slice" is a collection of Redux reducer logic and actions for a single feature in your app
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { label: 'USD', symbol: '$' }
 
