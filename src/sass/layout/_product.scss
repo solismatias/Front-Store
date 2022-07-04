@@ -32,16 +32,17 @@
     }
   }
   &__image {
-    width: 100%;
+    max-width: 40vw;
+    max-height: 80vh;
     &-container {
-      max-height: 80vh;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   &__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     max-width: 400px;
     max-height: 80vh;
     @media (max-width: 768px) {
