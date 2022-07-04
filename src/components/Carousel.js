@@ -8,7 +8,7 @@ export class Carousel extends Component {
   // Ok this carousel ended being a bit ugly/complicated :P, so I'll comment on everything it does
   nextSlide = () => {
     // I make sure it runs only when the carousel has content
-    if (this.carousel.current.children.length > 0) {
+    if (this.carousel.current.children.length > 1) {
       // First Carousel Item
       const firstItem = this.carousel.current.children[0];
       // Transition Animation
@@ -29,7 +29,7 @@ export class Carousel extends Component {
   };
 
   prevSlide = () => {
-    if (this.carousel.current.children.length > 0) {
+    if (this.carousel.current.children.length > 1) {
       const lastItemIndex = this.carousel.current.children.length - 1;
       const lastItem = this.carousel.current.children[lastItemIndex];
       this.carousel.current.insertBefore(lastItem, this.carousel.current.firstChild);
@@ -56,18 +56,22 @@ export class Carousel extends Component {
             </div>
           ))}
         </div >
-        <div className='carousel__controllers'>
-          <span className='carousel__arrow' onClick={this.prevSlide}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 8 14" fill="none">
-              <path d="M7 13L1 7L7 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-          <span className='carousel__arrow' onClick={this.nextSlide}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 8 14" fill="none">
-              <path d="M1 13L7 7L1 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        </div>
+        {images.length > 1 ?
+          <div className='carousel__controllers'>
+            <span className='carousel__arrow' onClick={this.prevSlide}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 8 14" fill="none">
+                <path d="M7 13L1 7L7 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+            <span className='carousel__arrow' onClick={this.nextSlide}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 8 14" fill="none">
+                <path d="M1 13L7 7L1 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+          </div>
+          :
+          null
+        }
       </div >
     )
   }
