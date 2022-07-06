@@ -50,7 +50,7 @@ export class MiniCart extends Component {
           {products.length > 0 ?
             <div className='minicart__itemcontainer'>
               {products.map(product => (
-                <CartItem product={product} key={product.item.id} />
+                <CartItem product={product} key={product.id} />
               ))}
             </div>
             :

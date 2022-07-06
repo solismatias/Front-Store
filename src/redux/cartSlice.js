@@ -9,8 +9,18 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const product = { attributes: action.payload.attributes, item: action.payload.item, amount: action.payload.amount, id: action.payload.item.id }
-      state.products.push(product)
+      const product = {
+        attributes: action.payload.attributes,
+        item: action.payload.item, amount: action.payload.amount,
+        id: action.payload.item.id + Object.entries(action.payload.attributes)
+      }
+      const index = state.products.findIndex(e => e.id === product.id)
+      console.log(product.id)
+      if (index !== -1) {
+        state.products[index].amount += 1
+      } else {
+        state.products.push(product)
+      }
     },
     updateAttribute: (state, action) => {
       const item = action.payload

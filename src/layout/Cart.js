@@ -14,7 +14,7 @@ export class Cart extends Component {
         <p className='cart__title'>CART</p>
         {products.length > 0 ?
           products.map(product => (
-            <CartItem big product={product} key={product.item.id} />
+            <CartItem big product={product} key={product.id} />
           ))
           :
           <EmptyCart />
