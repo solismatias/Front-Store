@@ -67,10 +67,11 @@
     width: 60px;
     height: 40px;
     border: 1px solid $black;
-    transition: $bezier;
+    transition: all 0.3s ease-in-out;
     &:hover:not(.incart) {
+      box-shadow: inset 0 0 0 50px $black;
       cursor: pointer;
-      @include shadow();
+      color: $white;
     }
     &--small {
       width: 40px;
@@ -83,9 +84,9 @@
       border: 1px solid $light-grey;
     }
     &--selected {
-      @include shadow();
       background-color: $black;
       color: $white;
+      @include shadow();
     }
   }
   &__swatch {
