@@ -35,6 +35,9 @@
       background-color: $dark-green;
       cursor: pointer;
     }
+    &--clicked {
+      animation: turn 2s ease-in-out 1 forwards;
+    }
   }
   &__price {
     font-weight: bold;
@@ -52,9 +55,28 @@
     height: 100%;
     top: 0;
     left: 0;
-    &--big{
+    &--big {
       position: fixed;
     }
     // z-index: 1;
+  }
+}
+
+@keyframes turn {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  55% {
+    transform: rotatez(360deg);
+  }
+  99% {
+    transform: rotateZ(720deg);
+    background-color: transparent;
+    border-color: $white;
+    border-top-color: $green;
+  }
+  100% {
+    border-color: $green;
+    background-color: $green;
   }
 }

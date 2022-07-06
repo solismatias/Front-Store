@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addItem } from '../redux/cartSlice';
 // React Router
 import { withRouter } from 'react-router-dom';
+import Button from '../components/Button';
 
 export class Product extends Component {
 
@@ -102,7 +103,8 @@ export class Product extends Component {
               //     </button>
               //   </Link>
               //   :
-              <button className="product__button" onClick={() => this.addToCart(product)}>ADD TO CART</button>
+              // <button className="product__button" onClick={() => this.addToCart(product)}>ADD TO CART</button>
+              <Button type="big" add={() => this.addToCart(product)} />
               :
               <button className="product__button product__button--disabled">OUT OF STOCK</button>}
           </section>
