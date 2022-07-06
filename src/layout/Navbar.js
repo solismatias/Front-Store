@@ -16,9 +16,20 @@ export class Navbar extends Component {
   }
 
   openCloseCart = () => {
-    this.setState(state => ({
-      isCartOpen: !state.isCartOpen
-    }))
+    if (this.state.isCartOpen) {
+      const element = document.querySelector(".minicart")
+      element.classList.add("up")
+      setTimeout(() => {
+        this.setState(state => ({
+          isCartOpen: !state.isCartOpen
+        }))
+      }, 500);
+    } else {
+      this.setState(state => ({
+        isCartOpen: !state.isCartOpen
+      }))
+    }
+
   }
   openCloseCurrency = () => {
     this.setState(state => ({

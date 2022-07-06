@@ -20,7 +20,11 @@ export class MiniCart extends Component {
 
   shouldCloseCart = (e) => {
     if (e.target.className === "minicart__background") {
-      this.props.close()
+      const element = document.querySelector(".minicart")
+      element.classList.add("up")
+      setTimeout(() => {
+        this.props.close()
+      }, 500);
     }
   }
 
@@ -65,13 +69,13 @@ export class MiniCart extends Component {
                   <button className='minicart__button' onClick={close}>VIEW BAG</button>
                 </Link>
                 <button className='minicart__button minicart__button--right' onClick={close && this.openCloseModal}>CHECK OUT</button>
-                {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={symbol} amount={total[symbol].toFixed(2)} /> : null}
               </>
               :
               null
             }
           </section>
         </article>
+        {this.state.isModalOpen ? <Modal close={this.openCloseModal} symbol={symbol} amount={total[symbol].toFixed(2)} /> : null}
       </div>
     )
   }

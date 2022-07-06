@@ -6,10 +6,17 @@ import { setCurrency } from '../redux/currencySlice';
 import { Query } from '@apollo/client/react/components';
 import { GET_CURRENCIES } from '../utils/queries';
 export class Currency extends Component {
+  handleClose(close) {
+    const element = document.querySelector(".currency__background")
+    element.classList.add("up")
+    setTimeout(() => {
+      close()
+    }, 500);
+  }
   render() {
     const { close, setCurrency } = this.props
     return (
-      <div className='currency__background' onClick={close}>
+      <div className='currency__background' onClick={() => this.handleClose(close)}>
         <ul className='currency'>
           <Query query={GET_CURRENCIES}>
             {({ data, loading, error }) => {

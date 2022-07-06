@@ -10,6 +10,7 @@
   padding: 0;
   background-color: $white;
   z-index: 3;
+  @include down-animation;
   @include shadow;
   &__item {
     display: flex;
@@ -18,7 +19,7 @@
     width: inherit;
     font-weight: bold;
     &:hover {
-      background-color: #EEEEEE;
+      background-color: #eeeeee;
       cursor: pointer;
     }
   }
@@ -30,4 +31,7 @@
     height: 100vh;
     z-index: 3;
   }
+}
+.up {
+  @include up-animation;
 }
