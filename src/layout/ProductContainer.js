@@ -9,7 +9,6 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 
 export class ProductContainer extends Component {
-
   render() {
     const productId = this.props.match.params.id;
     const { symbol } = this.props.currency

@@ -19,6 +19,7 @@ export class Product extends Component {
   }
 
   selectItem(index, attribute) {
+    // set the selected attributes of the product, e.g capacity: "512gb"
     const name = attribute.name
     const item = attribute.items[index].value
     this.setState(state => (
@@ -30,12 +31,8 @@ export class Product extends Component {
     this.props.addItem({ attributes: this.state.selectedAtributes, item: product, amount: 1 })
   }
 
-  productInCart(product) {
-    const index = this.props.cart.products.findIndex(e => e.id === product.id)
-    return index !== -1
-  }
-
   componentDidMount() {
+    // select the defaults attributes of the products automatically, e.g size="M"
     const attributes = this.props.product.attributes
     if (Object.keys(this.state.selectedAtributes).length === 0) {
       for (let attribute of attributes) {

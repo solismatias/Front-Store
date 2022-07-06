@@ -16,6 +16,8 @@ export class Navbar extends Component {
   }
 
   openCloseCart = () => {
+    // open and close the minicart
+    // check if the minicart is closing to show the animation 
     if (this.state.isCartOpen) {
       const element = document.querySelector(".minicart")
       element.classList.add("up")

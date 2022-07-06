@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class Button extends Component {
   clickedButton(add, e) {
+    // add the product to the cart and proceed with some animations
     add()
     const button = e.target
     button.classList.add('clicked');

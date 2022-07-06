@@ -10,7 +10,6 @@ import "./sass/main.scss"
 import Navbar from './layout/Navbar';
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
-import Product from "./layout/Product";
 import ErrorMessage from './components/ErrorMessage';
 import ProductContainer from './layout/ProductContainer';
 export class App extends Component {

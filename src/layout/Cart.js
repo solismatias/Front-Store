@@ -24,6 +24,7 @@ export class Cart extends Component {
       count += item.amount
     }
     for (const item of products) {
+      // calculate the total amount in every currency
       for (const price of item.item.prices) {
         if (total[price.currency.symbol] === undefined) {
           total[price.currency.symbol] = price.amount * item.amount
