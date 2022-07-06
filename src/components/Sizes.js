@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
-// Redux
-import { connect } from 'react-redux'
-import { updateAttribute } from '../redux/cartSlice'
 // Component
 import Square from './Square'
-
-
 export class Sizes extends Component {
-
-
   changeAttribute(attribute, product, index) {
     this.props.updateAttribute({ name: attribute.name, value: attribute.items[index].value, productId: product.item.id })
   }
@@ -17,9 +10,8 @@ export class Sizes extends Component {
     return item.value === this.props.selectedAttributes[attribute.name] || (index === 0 && !this.props.selectedAttributes[attribute.name])
   }
 
-
   render() {
-    const { product, attributes, size } = this.props
+    const { attributes, size } = this.props
     return (
       <div className='sizes'>
         {attributes.map(attribute => (
@@ -37,4 +29,4 @@ export class Sizes extends Component {
   }
 }
 
-export default connect(null, { updateAttribute })(Sizes);
+export default Sizes;
