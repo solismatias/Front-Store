@@ -2,13 +2,8 @@ import React, { Component } from 'react'
 
 export default class Button extends Component {
   clickedButton(add, e) {
-    console.log(e);
     add()
     const button = e.target
-    // classList.add
-    // classList.remove
-    // classList.contains
-
     button.classList.add('clicked');
     setTimeout(function () {
       button.classList.remove('clicked')
