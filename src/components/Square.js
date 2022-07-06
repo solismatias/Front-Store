@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class Square extends Component {
   render() {
-    const { selected, size, click, type } = this.props
+    const { selected, size, type } = this.props
     const { value } = this.props.item
     return (
       type === "swatch" ?
