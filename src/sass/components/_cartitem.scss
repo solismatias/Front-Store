@@ -30,4 +30,9 @@
     width: 130px;
     height: fit-content;
   }
+  &__separator {
+    border: none;
+    height: 2px;
+    background-color: #e5e5e5;
+  }
 }
