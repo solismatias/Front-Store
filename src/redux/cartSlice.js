@@ -15,7 +15,6 @@ export const cartSlice = createSlice({
         id: action.payload.item.id + Object.entries(action.payload.attributes)
       }
       const index = state.products.findIndex(e => e.id === product.id)
-      console.log(product.id)
       if (index !== -1) {
         state.products[index].amount += 1
       } else {
