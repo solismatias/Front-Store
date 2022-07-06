@@ -5,6 +5,7 @@ import { addItem } from '../redux/cartSlice';
 // React Router
 import { withRouter } from 'react-router-dom';
 import Button from '../components/Button';
+import DOMPurify from 'dompurify';
 
 export class Product extends Component {
 
@@ -108,7 +109,7 @@ export class Product extends Component {
               :
               <button className="product__button product__button--disabled">OUT OF STOCK</button>}
           </section>
-          <span className='product__details' dangerouslySetInnerHTML={{ __html: product.description }} />
+          <span className='product__details' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(product.description) }} />
         </article>
       </div >
     )
